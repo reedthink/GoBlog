@@ -45,11 +45,31 @@ func AddTag(name string, state int, createdBy string) bool {
 
 	return true
 }
+
 func (tag *Tag) BeforeCreate(scope *gorm.Scope) error {
-	scope.SetColumn("CreateOn", time.Now().Unix())
+	scope.SetColumn("CreatedOn", time.Now().Unix())
 	return nil
 }
 func (tag *Tag) BeforeUpdate(scope *gorm.Scope) error {
 	scope.SetColumn("ModifiedOn", time.Now().Unix())
 	return nil
+}
+
+func ExistTagByID(id int) bool {
+	var tag Tag
+	db.Select("id").Where("id = ?", id).First(&tag) //`id=? 不加空格
+	if tag.ID > 0 {
+		return true
+	}
+	return false
+}
+
+func DeleteTag(id int) bool {
+	db.Where("id = ?", id).Delete(&Tag{}) //`id=? 不加空格
+	return true
+}
+
+func EditTag(id int, data interface{}) bool {
+	db.Model(&Tag{}).Where("id = ?", id).Updates(data)
+	return true
 }
