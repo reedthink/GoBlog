@@ -2,19 +2,24 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
+
+	"github.com/reedthink/pkg/setting"
+	"github.com/reedthink/routers"
 )
 
-func sayHello(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "您看到我了")
+func main() {
+	router := routers.InitRouter()
+	s := &http.Server{
+		Addr:           fmt.Sprintf(":%d", setting.HTTPPort),
+		Handler:        router,
+		ReadTimeout:    setting.ReadTimeout,
+		WriteTimeout:   setting.WriteTimeout,
+		MaxHeaderBytes: 1 << 20,
+	}
+	s.ListenAndServe()
 }
 
-func main() {
-	http.HandleFunc("/", sayHello)
-	log.Println("启动了")
-	err := http.ListenAndServe(":8000", nil)
-	if err != nil {
-		log.Fatal("List 8000")
-	}
-}
+/*
+ALTER user 'root'@'localhost' IDENTIFIED BY 'sqldb' 
+*/
