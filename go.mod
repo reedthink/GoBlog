@@ -4,7 +4,7 @@ go 1.13
 
 require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
+	github.com/gin-gonic/gin v1.5.0
 	github.com/go-openapi/spec v0.19.7 // indirect
 	github.com/go-openapi/swag v0.19.8 // indirect
 	github.com/go-playground/universal-translator v0.17.0 // indirect
@@ -15,9 +15,9 @@ require (
 	github.com/mailru/easyjson v0.7.1 // indirect
 	github.com/mattn/go-isatty v0.0.12 // indirect
 	github.com/reedthink/models v0.0.0-00010101000000-000000000000 // indirect
-	github.com/reedthink/pkg/e v0.0.0-00010101000000-000000000000 // indirect
+	github.com/reedthink/pkg/e v0.0.0-00010101000000-000000000000
 	github.com/reedthink/pkg/setting v0.0.0-00010101000000-000000000000
-	github.com/reedthink/pkg/util v0.0.0-00010101000000-000000000000 // indirect
+	github.com/reedthink/pkg/util v0.0.0-00010101000000-000000000000
 	github.com/reedthink/routers v0.0.0-00010101000000-000000000000
 	github.com/swaggo/swag v1.6.5 // indirect
 	github.com/urfave/cli v1.22.3 // indirect
