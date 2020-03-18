@@ -14,7 +14,6 @@ require (
 	github.com/leodido/go-urn v1.2.0 // indirect
 	github.com/mailru/easyjson v0.7.1 // indirect
 	github.com/mattn/go-isatty v0.0.12 // indirect
-	github.com/reedthink/models v0.0.0-00010101000000-000000000000 // indirect
 	github.com/reedthink/pkg/e v0.0.0-00010101000000-000000000000
 	github.com/reedthink/pkg/setting v0.0.0-00010101000000-000000000000
 	github.com/reedthink/pkg/util v0.0.0-00010101000000-000000000000
