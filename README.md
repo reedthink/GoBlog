@@ -5,3 +5,8 @@
 - gorm
 - jwt-go
 - swaggo
+
+如何启动：
+`go run main.go`
+
+查看API文档: http://127.0.0.1:8000/swagger/index.html
