@@ -1,0 +1,124 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "测试",
+        "title": "测试",
+        "contact": {},
+        "license": {},
+        "version": "0.0.1"
+    },
+    "basePath": "/api/v1/",
+    "paths": {
+        "/api/v1/articles": {
+            "get": {
+                "summary": "获取多篇文章"
+            },
+            "post": {
+                "summary": "新增文章"
+            }
+        },
+        "/api/v1/articles/{id}": {
+            "get": {
+                "summary": "获取单个文章"
+            },
+            "put": {
+                "summary": "编辑文章"
+            },
+            "delete": {
+                "summary": "删除文章"
+            }
+        },
+        "/api/v1/tags": {
+            "get": {
+                "summary": "获取文章标签"
+            },
+            "post": {
+                "description": "新增文章标签",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "新增文章标签",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Name",
+                        "name": "name",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "State",
+                        "name": "state",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "CreatedBy",
+                        "name": "created_by",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "summary": "删除文章标签"
+            }
+        },
+        "/api/v1/tags/{id}": {
+            "put": {
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "编辑文章标签",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "ID",
+                        "name": "name",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "State",
+                        "name": "state",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "ModifiedBy",
+                        "name": "modified_by",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

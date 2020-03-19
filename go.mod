@@ -18,17 +18,17 @@ require (
 	github.com/reedthink/pkg/setting v0.0.0-00010101000000-000000000000
 	github.com/reedthink/pkg/util v0.0.0-00010101000000-000000000000
 	github.com/reedthink/routers v0.0.0-00010101000000-000000000000
-	github.com/swaggo/swag v1.6.5 // indirect
 	github.com/urfave/cli v1.22.3 // indirect
 	golang.org/x/net v0.0.0-20200301022130-244492dfa37a // indirect
 	golang.org/x/sys v0.0.0-20200317113312-5766fd39f98d // indirect
-	golang.org/x/tools v0.0.0-20200317205521-2944c61d58b4 // indirect
+	golang.org/x/tools v0.0.0-20200318150045-ba25ddc85566 // indirect
 	gopkg.in/go-playground/validator.v9 v9.31.0 // indirect
 	gopkg.in/yaml.v2 v2.2.8 // indirect
 )
 
 replace (
 	github.com/reedthink/conf => /home/hhh/src/GoBlog/pkg/conf
+	github.com/reedthink/docs => /home/hhh/src/GoBlog/docs
 	github.com/reedthink/middleware => /home/hhh/src/GoBlog/middleware
 	github.com/reedthink/models => /home/hhh/src/GoBlog/models
 	github.com/reedthink/pkg/e => /home/hhh/src/GoBlog/pkg/e

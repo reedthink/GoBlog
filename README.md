@@ -4,3 +4,4 @@
 - gin
 - gorm
 - jwt-go
+- swaggo

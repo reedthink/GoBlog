@@ -5,6 +5,7 @@ import (
 
 	"github.com/astaxie/beego/validation"
 	"github.com/gin-gonic/gin"
+	_ "github.com/reedthink/docs"
 	"github.com/reedthink/models"
 	"github.com/reedthink/pkg/e"
 	"github.com/reedthink/pkg/logging"
@@ -16,8 +17,8 @@ import (
 /*
 备忘：要写个脚本，每次函数注释都自动加上函数名
 */
-
-// GetArticle 获取单个文章
+// @Summary 获取单个文章
+// @Router /api/v1/articles/{id} [get]
 func GetArticle(c *gin.Context) {
 	id := com.StrTo(c.Param("id")).MustInt()
 
@@ -47,7 +48,8 @@ func GetArticle(c *gin.Context) {
 
 }
 
-//GetArticles 获取多篇文章
+// @Summary 获取多篇文章
+// @Router /api/v1/articles [get]
 func GetArticles(c *gin.Context) {
 	data := make(map[string]interface{})
 	maps := make(map[string]interface{})
@@ -89,7 +91,8 @@ func GetArticles(c *gin.Context) {
 	})
 }
 
-//AddArticle 添加文章
+// @Summary 新增文章
+// @Router /api/v1/articles [post]
 func AddArticle(c *gin.Context) {
 	tagId := com.StrTo(c.Query("tag_id")).MustInt()
 	title := c.Query("title")
@@ -135,7 +138,8 @@ func AddArticle(c *gin.Context) {
 	})
 }
 
-//EditArticle 编辑文章
+// @Summary 编辑文章
+// @Router /api/v1/articles/{id} [put]
 func EditArticle(c *gin.Context) {
 	valid := validation.Validation{}
 
@@ -200,7 +204,8 @@ func EditArticle(c *gin.Context) {
 	})
 }
 
-//DeleteArticle 删除文章
+// @Summary 删除文章
+// @Router /api/v1/articles/{id} [delete]
 func DeleteArticle(c *gin.Context) {
 	id := com.StrTo(c.Param("id")).MustInt()
 

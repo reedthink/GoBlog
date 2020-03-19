@@ -1,0 +1,82 @@
+basePath: /api/v1/
+info:
+  contact: {}
+  description: 测试
+  license: {}
+  title: 测试
+  version: 0.0.1
+paths:
+  /api/v1/articles:
+    get:
+      summary: 获取多篇文章
+    post:
+      summary: 新增文章
+  /api/v1/articles/{id}:
+    delete:
+      summary: 删除文章
+    get:
+      summary: 获取单个文章
+    put:
+      summary: 编辑文章
+  /api/v1/tags:
+    delete:
+      summary: 删除文章标签
+    get:
+      summary: 获取文章标签
+    post:
+      consumes:
+      - application/json
+      description: 新增文章标签
+      parameters:
+      - description: Name
+        in: query
+        name: name
+        required: true
+        type: string
+      - description: State
+        in: query
+        name: state
+        type: integer
+      - description: CreatedBy
+        in: query
+        name: created_by
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: 新增文章标签
+  /api/v1/tags/{id}:
+    put:
+      parameters:
+      - description: ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: ID
+        in: query
+        name: name
+        required: true
+        type: string
+      - description: State
+        in: query
+        name: state
+        type: integer
+      - description: ModifiedBy
+        in: query
+        name: modified_by
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ok
+          schema:
+            type: string
+      summary: 编辑文章标签
+swagger: "2.0"

@@ -8,6 +8,10 @@ import (
 	"github.com/reedthink/routers"
 )
 
+// @title 测试
+// @version 0.0.1
+// @description  测试
+// @BasePath /api/v1/
 func main() {
 	router := routers.InitRouter()
 	s := &http.Server{
