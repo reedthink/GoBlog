@@ -24,7 +24,6 @@ require (
 	golang.org/x/sys v0.0.0-20200317113312-5766fd39f98d // indirect
 	golang.org/x/tools v0.0.0-20200317205521-2944c61d58b4 // indirect
 	gopkg.in/go-playground/validator.v9 v9.31.0 // indirect
-	gopkg.in/ini.v1 v1.55.0 // indirect
 	gopkg.in/yaml.v2 v2.2.8 // indirect
 )
 
@@ -33,8 +32,8 @@ replace (
 	github.com/reedthink/middleware => /home/hhh/src/GoBlog/middleware
 	github.com/reedthink/models => /home/hhh/src/GoBlog/models
 	github.com/reedthink/pkg/e => /home/hhh/src/GoBlog/pkg/e
+	github.com/reedthink/pkg/logging => /home/hhh/src/GoBlog/pkg/logging
 	github.com/reedthink/pkg/setting => /home/hhh/src/GoBlog/pkg/setting
 	github.com/reedthink/pkg/util => /home/hhh/src/GoBlog/pkg/util
 	github.com/reedthink/routers => /home/hhh/src/GoBlog/routers
-
 )

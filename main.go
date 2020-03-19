@@ -21,5 +21,5 @@ func main() {
 }
 
 /*
-ALTER user 'root'@'localhost' IDENTIFIED BY 'sqldb' 
+ALTER user 'root'@'localhost' IDENTIFIED BY 'sqldb'
 */
