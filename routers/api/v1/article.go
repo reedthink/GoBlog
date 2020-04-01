@@ -5,12 +5,12 @@ import (
 
 	"github.com/astaxie/beego/validation"
 	"github.com/gin-gonic/gin"
-	_ "github.com/reedthink/docs"
-	"github.com/reedthink/models"
-	"github.com/reedthink/pkg/e"
-	"github.com/reedthink/pkg/logging"
-	"github.com/reedthink/pkg/setting"
-	"github.com/reedthink/pkg/util"
+	_ "GoBlog/docs"
+	"GoBlog/models"
+	"GoBlog/pkg/e"
+	"GoBlog/pkg/logging"
+	"GoBlog/pkg/setting"
+	"GoBlog/pkg/util"
 	"github.com/unknwon/com"
 )
 

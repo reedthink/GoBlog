@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/reedthink/pkg/e"
-	"github.com/reedthink/pkg/util"
+	"GoBlog/pkg/e"
+	"GoBlog/pkg/util"
 )
 
 func JWT() gin.HandlerFunc {

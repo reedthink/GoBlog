@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/reedthink/pkg/setting"
-	"github.com/reedthink/routers"
+	"GoBlog/pkg/setting"
+	"GoBlog/routers"
 )
 
 // @title 测试

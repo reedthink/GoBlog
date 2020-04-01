@@ -5,12 +5,12 @@ import (
 	ginSwagger "github.com/swaggo/gin-swagger"
 	"github.com/swaggo/gin-swagger/swaggerFiles"
 
-	"github.com/reedthink/middleware/jwt"
-	"github.com/reedthink/pkg/setting"
-	"github.com/reedthink/routers/api"
-	v1 "github.com/reedthink/routers/api/v1"
+	"GoBlog/middleware/jwt"
+	"GoBlog/pkg/setting"
+	"GoBlog/routers/api"
+	v1 "GoBlog/routers/api/v1"
 
-	_ "github.com/reedthink/docs"
+	_ "GoBlog/docs"
 )
 
 
