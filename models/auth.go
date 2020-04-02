@@ -1,4 +1,5 @@
 package models
+//一个获取Token的 API
 type Auth struct {
 	ID       int    `gorm:"primary_key" json:"id"`
 	Username string `json:"username"`

@@ -3,12 +3,12 @@ package api
 import (
 	"net/http"
 
-	"github.com/astaxie/beego/validation"
-	"github.com/gin-gonic/gin"
 	"GoBlog/models"
 	"GoBlog/pkg/e"
 	"GoBlog/pkg/logging"
 	"GoBlog/pkg/util"
+	"github.com/astaxie/beego/validation"
+	"github.com/gin-gonic/gin"
 )
 
 type auth struct {

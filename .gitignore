@@ -1,2 +1,4 @@
 GoBlog
 *.log
+go_build_GoBlog
+.idea

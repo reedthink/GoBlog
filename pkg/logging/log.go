@@ -1,10 +1,11 @@
 package logging
+
 import (
+	"fmt"
 	"log"
 	"os"
-	"runtime"
 	"path/filepath"
-	"fmt"
+	"runtime"
 )
 
 type Level int
@@ -12,11 +13,11 @@ type Level int
 var (
 	F *os.File
 
-	DefaultPrefix = ""
+	DefaultPrefix      = ""
 	DefaultCallerDepth = 2
 
-	logger *log.Logger
-	logPrefix = ""
+	logger     *log.Logger
+	logPrefix  = ""
 	levelFlags = []string{"DEBUG", "INFO", "WARN", "ERROR", "FATAL"}
 )
 
@@ -31,7 +32,7 @@ const (
 func init() {
 	filePath := getLogFileFullPath()
 	F = openLogFile(filePath)
-
+	//
 	logger = log.New(F, DefaultPrefix, log.LstdFlags)
 }
 
