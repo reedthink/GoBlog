@@ -20,8 +20,13 @@ type Model struct {
 
 func init() {
 	var (
-		err                                               error
-		dbType, dbName, user, password, host, tablePrefix string
+		err         error
+		dbType      string
+		dbName      string
+		user        string
+		host        string
+		password    string
+		tablePrefix string
 	)
 
 	sec, err := setting.Cfg.GetSection("database")
