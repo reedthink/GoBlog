@@ -8,9 +8,9 @@ import (
 	"GoBlog/routers"
 )
 
-// @title 测试
-// @version 0.0.1
-// @description  测试
+// @title GoBlog
+// @version 0.0.2
+// @description GoBlog的API文档
 // @BasePath /api/v1/
 func main() {
 	router := routers.InitRouter()
@@ -23,7 +23,16 @@ func main() {
 	}
 	s.ListenAndServe()
 }
-
 /*
+重新生成API文档
+swag init 
 
+再次编译
+go build
+
+后台运行程序
+nohup ./GoBlog &
+
+杀掉后台
+pkill GoBlog
 */

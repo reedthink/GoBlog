@@ -13,4 +13,4 @@
 ## 如何启动：
 `go build && ./GoBlog`
 
-## 查看API文档: http://127.0.0.1:8000/swagger/index.html
+## 查看API文档: http://114.116.239.137:8081/swagger/index.html

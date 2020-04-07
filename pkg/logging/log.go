@@ -22,7 +22,7 @@ var (
 )
 
 const (
-	DEBUG Level = iota 
+	DEBUG Level = iota //枚举
 	INFO
 	WARNING
 	ERROR
