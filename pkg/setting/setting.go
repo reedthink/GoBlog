@@ -2,14 +2,13 @@ package setting
 
 import (
 	"log"
+	"os"
 	"time"
 
-	"github.com/go-ini/ini"
+	"github.com/spf13/viper"
 )
 
 var (
-	Cfg *ini.File
-
 	RunMode string
 
 	HTTPPort     int
@@ -21,38 +20,22 @@ var (
 )
 
 func init() {
-	var err error
-	Cfg, err = ini.Load("conf/app.ini")
+	workDir, err := os.Getwd()
 	if err != nil {
-		log.Fatalf("Fail to parse 'conf/app.ini': %v", err)
+		log.Println(err)
 	}
+	viper.AddConfigPath(workDir + "./conf") //引入目录
+	viper.SetConfigName("app")
+	viper.SetConfigType("yml")
+	err = viper.ReadInConfig() //从上述的路径中读取配置文件
 
-	LoadBase()
-	LoadServer()
-	LoadApp()
-}
-
-func LoadBase() {
-	RunMode = Cfg.Section("").Key("RUN_MODE").MustString("debug")
-}
-
-func LoadServer() {
-	sec, err := Cfg.GetSection("server")
 	if err != nil {
-		log.Fatalf("Fail to get section 'server': %v", err)
+		log.Printf("没找到配置文件")
 	}
-
-	HTTPPort = sec.Key("HTTP_PORT").MustInt(8000)
-	ReadTimeout = time.Duration(sec.Key("READ_TIMEOUT").MustInt(60)) * time.Second
-	WriteTimeout = time.Duration(sec.Key("WRITE_TIMEOUT").MustInt(60)) * time.Second
-}
-
-func LoadApp() {
-	sec, err := Cfg.GetSection("app")
-	if err != nil {
-		log.Fatalf("Fail to get section 'app': %v", err)
-	}
-
-	JwtSecret = sec.Key("JWT_SECRET").MustString("!@)*#)!@U#@*!@!)")
-	PageSize = sec.Key("PAGE_SIZE").MustInt(10)
+	RunMode = viper.GetString("RUN_MODE")
+	HTTPPort = viper.GetInt("server.HTTP_PORT")
+	ReadTimeout = time.Duration(viper.GetInt("server.READ_TIMEOUT")) * time.Second
+	WriteTimeout = time.Duration(viper.GetInt("server.WRITE_TIMEOUT")) * time.Second
+	JwtSecret = viper.GetString("app.JWT_SECRET")
+	PageSize = viper.GetInt("app.PAGE_SIZE")
 }
